@@ -32,7 +32,7 @@ For example:
 
 const GET_POSTS = 'myapp/GET_POSTS';
 const GET_POSTS_REQUEST = 'myapp/GET_POSTS_REQUEST';
-const GET_POSTS_ERROR = 'myapp/GET_POSTS_REQUEST';
+const GET_POSTS_ERROR = 'myapp/GET_POSTS_ERROR';
 
 // get posts action, postService.getPosts() returns a promise
 export function getPosts() {
