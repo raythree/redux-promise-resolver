@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raythree/redux-action-binder.git"
+    "url": "git+https://github.com/raythree/redux-promise-resolver.git"
   },
   "keywords": [
     "react",
