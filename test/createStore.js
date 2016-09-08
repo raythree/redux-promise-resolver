@@ -25,8 +25,8 @@ function delay(msg) {
   });
 }
 
-export function sayHello(msg, processor) {
-  return { type: SAY_HELLO, payload: delay(msg), processor};
+export function sayHello(msg, processor, requestData) {
+  return { type: SAY_HELLO, payload: delay(msg), processor, requestData};
 }
 
 function reducer(state = initialState, action = {}) {
@@ -34,7 +34,8 @@ function reducer(state = initialState, action = {}) {
     case SAY_HELLO_REQUEST:
       return {
         ...state,
-        pending: true
+        pending: true,
+        requestData: action.requestData
       };
 
     case SAY_HELLO:

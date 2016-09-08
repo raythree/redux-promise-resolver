@@ -21,6 +21,22 @@ describe('test suite', function() {
     let state = store.getState();
     assert(state.message === '');
     assert(state.pending === true);
+    assert(state.requestData === null);
+
+    setTimeout(() => {
+      state = store.getState();
+      assert(state.message === 'Hello');
+      assert(!state.pending);
+      done();
+    }, 60);
+  });
+
+  it('should handle resolved async actions with request data', function (done) {
+    store.dispatch(sayHello('Hello', null, 'request data'));
+    let state = store.getState();
+    assert(state.message === '');
+    assert(state.pending === true);
+    assert(state.requestData === 'request data');
 
     setTimeout(() => {
       state = store.getState();
