@@ -1,3 +1,9 @@
+## 1.0.4
+* Include requestData in success actions
+
+## 1.0.3
+* Pass requestData it it is defined (to handle boolean case)
+
 ## 1.0.2
 * Pass requestData to error callback as well
 

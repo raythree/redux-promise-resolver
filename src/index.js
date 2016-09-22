@@ -13,7 +13,11 @@ export default ({ dispatch }) => {
     const errorType = `${action.type}_ERROR`;
     const bypassType = `${action.type}_BYPASS`;
 
-    const requestData = action.requestData || null;
+    let requestData = null;
+    if (typeof action.requestData !== 'undefined') {
+      requestData = action.requestData;
+    }
+
     dispatch({ type: requestType, requestData: requestData });
 
     action.payload
@@ -24,7 +28,7 @@ export default ({ dispatch }) => {
           return;
         }
       }
-      dispatch({ type: successType, payload: response });
+      dispatch({ type: successType, payload: response, requestData });
     })
     .catch((error) => {
       dispatch({ type: errorType, payload: error, requestData });

@@ -85,7 +85,7 @@ export function getPost(id) {
 
 // when the GET_POST_REQUEST action is dispatched the action.requestData will contain the id
 ```
-If no requestData is present the action.requestData property will be set to ```null```.
+If no requestData is present the action.requestData property will be set to ```null```. The requestData property will also be included in the ```<actionType>_ERROR``` action.
 
 ## Bypassing the action
 This is useful for a case where you want to periodically dispatch an async action, but only update if something has changed. For example, you could do a background query for a list of items visible on the screen, show a spinner to indicate the background refresh, and then check the received data to see if there were any changes. By supplying a ```processor``` property that is a function in the action, it will be called when the promise resolves and passed the data. If the function returns ```true``` then the success action will be dispatched with the update data. If the function returns ```false``` then the ```<actionType>_BYPASS``` action will be dispatched instead. This could for example turn off the spinner without updating the data. See the [testCases](https://github.com/raythree/redux-promise-resolver/blob/master/test/testCases.js) for a usage example.
