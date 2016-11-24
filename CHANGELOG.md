@@ -1,3 +1,6 @@
+## 1.0.5
+* Include action.requestData in success callbacks
+
 ## 1.0.4
 * Include requestData in success actions
 

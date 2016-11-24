@@ -28,7 +28,7 @@ export default ({ dispatch }) => {
           return;
         }
       }
-      dispatch({ type: successType, payload: response, requestData });
+      dispatch({ type: successType, payload: response, requestData: requestData });
     })
     .catch((error) => {
       dispatch({ type: errorType, payload: error, requestData });
